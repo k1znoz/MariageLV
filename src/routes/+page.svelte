@@ -14,29 +14,38 @@
 
 	// Hébergements data
 	const hebergementsProches = [
-		{ nom: 'Gîte Les Acacias', capacite: '4/5 pers.', distance: 'Village', contact: '06 63 06 86 25' },
-		{ nom: 'Chambre d\'hôtes rue d\'Enzia', capacite: '2/3 pers.', distance: 'Village', contact: '06 66 92 57 54' },
-		{ nom: 'Moulin du Cray', capacite: '2 pers.', distance: '1 km', contact: '03 85 25 13 87' },
-		{ nom: 'Maison d\'hôtes Terre des Barres', capacite: '-', distance: '2 km', contact: '06 99 37 48 06' },
-		{ nom: 'Chambres d\'hôtes La Cathelinée', capacite: '-', distance: '2 km', contact: 'delphinemuth@gmail.com' },
-		{ nom: 'Gîte Les Volets Rouges', capacite: '5 pers.', distance: '2,5 km', contact: '06 48 59 17 40' },
-		{ nom: 'Chambres d\'hôtes Sylvie Bouteille', capacite: '4/6 pers.', distance: '3 km', contact: '06 11 60 68 00' },
-		{ nom: 'Écuries La Villeneuve', capacite: 'Familial', distance: '3 km', contact: '06 22 48 91 43' }
+		{ nom: 'Gîte Les Acacias', capacite: '4/5 pers.', distance: 'Village', contact: '06 63 06 86 25', lien: 'https://www.bourgogne-tourisme.com/locations-de-vacances/les-accacias' },
+		{ nom: 'Chambre d\'hôtes rue d\'Enzia', capacite: '2/3 pers.', distance: 'Village', contact: '06 66 92 57 54', lien: 'https://fr.airbnb.be/rooms/1105049826838486653?source_impression_id=p3_1769673552_P33HaqyVreNwclia' },
+		{ nom: 'Moulin du Cray', capacite: '2 pers.', distance: '1 km', contact: '03 85 25 13 87', lien: 'http://moulinducray.free.fr/' },
+		{ nom: 'Maison d\'Hôte Terre des Barres', capacite: '-', distance: '2 km', contact: '06 99 37 48 06', lien: '' },
+		{ nom: 'Gite-des-chatelaines', capacite: '-', distance: '2 km', contact: '', lien: 'https://www.bourgogne-tourisme.com/locations-de-vacances/gite-des-chatelaines' },
+		{ nom: 'Gîte Les Volets Rouges', capacite: '5 pers.', distance: '2,5 km', contact: '06 48 59 17 40', lien: 'https://www.bourgogne-tourisme.com/locations-de-vacances/les-volets-rouges-4' },
+		{ nom: 'Chambres d\'hôtes Sylvie Bouteille', capacite: '4/6 pers.', distance: '3 km', contact: '06 11 60 68 00', lien: 'https://www.tourismecharolaisbrionnais.fr/chambres-d-hotes/chambres-d-hotes-bouteille-sylvie--HLOBOU071V502HGD.html' },
+		{ nom: 'Écuries La Villeneuve', capacite: 'Familial', distance: '3 km', contact: '06 22 48 91 43', lien: '' }
 	];
 
 	const hebergementsEloignes = [
-		{ nom: 'Le Baugy\'te (dortoir)', capacite: '14 pers.', distance: '5 km', contact: '06 41 99 54 82', petit_budget: true },
-		{ nom: 'Chambres d\'hôtes Les Pergolas', capacite: '3 ch.', distance: '5 km', contact: 'homelespergolas@gmail.com' },
-		{ nom: 'Villa Léonie (Marcigny)', capacite: '24 pers.', distance: '5 km', contact: '06 13 31 36 57' },
-		{ nom: 'Gîte de la Terre des Pierres', capacite: '14 pers.', distance: '5,5 km', contact: '06 69 34 59 86' },
-		{ nom: 'Gîte Le Chalet (Sainte-Foy)', capacite: '29 pers.', distance: '8,5 km', contact: '06 07 25 84 23' },
-		{ nom: 'La Grange de Marraine & le Fenil de Joanny', capacite: '15-22 pers.', distance: '11 km', contact: '06 52 15 86 20' },
-		{ nom: 'Château de Martigny', capacite: 'Chambres & gîte', distance: '12 min', contact: '03 85 81 53 21' },
-		{ nom: 'Château de la Chaix', capacite: '-', distance: '18 min', contact: 'chateau-de-la-chaix.com' },
-		{ nom: 'Château de Vaulx', capacite: '-', distance: '22 km', contact: 'chateaudevaulx.com' }
+		{ nom: 'Le Baugy\'te (dortoir)', capacite: '14 pers.', distance: '5 km', contact: '06 41 99 54 82', petit_budget: true, lien: 'https://www.baugyte.com/' },
+		{ nom: 'Chambres d\'hôtes Les Pergolas', capacite: '3 ch.', distance: '5 km', contact: 'homelespergolas@gmail.com', lien: 'https://les-pergolas-chambres-dhotes.jimdosite.com/' },
+		{ nom: 'Villa Léonie (Marcigny)', capacite: '24 pers.', distance: '5 km', contact: '06 13 31 36 57', lien: 'https://www.bourgogne-tourisme.com/locations-de-vacances/villa-leonie' },
+		{ nom: 'Gîte de la Terre des Pierres', capacite: '14 pers.', distance: '5,5 km', contact: '06 69 34 59 86', lien: 'https://laterredespierres.fr/' },
+		{ nom: 'Gîte Le Chalet (Sainte-Foy)', capacite: '28 pers.', distance: '8,5 km', contact: '06 07 25 84 23', lien: 'https://www.lechalet-saintefoy.fr/' },
+		{ nom: 'La Grange de Marraine & le Fenil de Joanny', capacite: '15-22 pers.', distance: '11 km', contact: '06 52 15 86 20', lien: 'http://www.grangedemarraine.com/' },
+		{ nom: 'Château de Martigny', capacite: 'Chambres & gîte', distance: '12 min', contact: '03 85 81 53 21', lien: 'https://chateaudemartigny.fr/' },
+		{ nom: 'Château de la Chaix', capacite: '-', distance: '18 min', contact: '06  09 27 98 36 / chateaudelachaix@gmail.com', lien: 'https://www.chateau-de-la-chaix.com/' },
+		{ nom: 'Château de Vaulx', capacite: '-', distance: '22 km', contact: '07 88 34 84 94 / barry@chateaudevaulx.com', lien: 'https://www.chateaudevaulx.com/cms/index.php/fr/' }
 	];
 
 	let mobileMenuOpen = $state(false);
+	let lightboxImage = $state<string | null>(null);
+
+	function openLightbox(src: string) {
+		lightboxImage = src;
+	}
+
+	function closeLightbox() {
+		lightboxImage = null;
+	}
 </script>
 
 <svelte:head>
@@ -152,6 +161,20 @@
 						</svg>
 						Parking à proximité
 					</p>
+					<!-- Plan de parking -->
+					<div class="mt-6">
+						<p class="text-sm font-medium text-[var(--color-charcoal)] mb-2 flex items-center gap-2">
+							<span>🅿️</span> Plan des parkings
+						</p>
+						<button type="button" onclick={() => openLightbox('/ressources/parkingEglise.jpeg')} class="w-full">
+							<img 
+								src="/ressources/parkingEglise.jpeg" 
+								alt="Plan des parkings autour de l'église de Gueugnon" 
+								class="rounded-xl w-full border border-[var(--color-sage)]/20 cursor-pointer hover:shadow-lg transition-shadow"
+							/>
+						</button>
+						<p class="text-xs text-[var(--color-charcoal)]/50 mt-2 text-center">Cliquez pour agrandir</p>
+					</div>
 				</div>
 
 				<!-- Réception -->
@@ -172,6 +195,20 @@
 						</svg>
 						Parking sur place
 					</p>
+					<!-- Plan de parking -->
+					<div class="mt-6">
+						<p class="text-sm font-medium text-[var(--color-charcoal)] mb-2 flex items-center gap-2">
+							<span>🅿️</span> Plan des parkings
+						</p>
+						<button type="button" onclick={() => openLightbox('/ressources/parkingPrieure.jpeg')} class="w-full">
+							<img 
+								src="/ressources/parkingPrieure.jpeg" 
+								alt="Plan des parkings autour des Salles du Prieuré à Anzy-le-Duc" 
+								class="rounded-xl w-full border border-[var(--color-sage)]/20 cursor-pointer hover:shadow-lg transition-shadow"
+							/>
+						</button>
+						<p class="text-xs text-[var(--color-charcoal)]/50 mt-2 text-center">Cliquez pour agrandir</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -304,15 +341,28 @@
 				</h3>
 				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
 					{#each hebergementsProches as h}
-						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow">
+						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow flex flex-col">
 							<h4 class="font-medium text-[var(--color-charcoal)] text-sm mb-2 leading-tight">{h.nom}</h4>
-							<div class="space-y-1 text-xs text-[var(--color-charcoal)]/60">
+							<div class="space-y-1 text-xs text-[var(--color-charcoal)]/60 flex-1">
 								{#if h.capacite !== '-'}
 									<p>👥 {h.capacite}</p>
 								{/if}
 								<p>📍 {h.distance}</p>
 								<p class="text-[var(--color-sage-dark)]">📞 {h.contact}</p>
 							</div>
+							{#if h.lien}
+								<a 
+									href={h.lien} 
+									target="_blank" 
+									rel="noopener noreferrer"
+									class="mt-3 inline-flex items-center justify-center gap-1.5 text-xs font-medium text-white bg-[var(--color-sage-dark)] hover:bg-[var(--color-charcoal)] px-3 py-2 rounded-lg transition-colors"
+								>
+									<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+									Voir le site
+								</a>
+							{/if}
 						</div>
 					{/each}
 				</div>
@@ -326,18 +376,31 @@
 				</h3>
 				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					{#each hebergementsEloignes as h}
-						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow">
+						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow flex flex-col">
 							{#if h.petit_budget}
-								<span class="inline-block text-xs bg-[var(--color-sage)]/20 text-[var(--color-sage-dark)] px-2 py-0.5 rounded mb-2">Petit budget</span>
+								<span class="inline-block text-xs bg-[var(--color-sage)]/20 text-[var(--color-sage-dark)] px-2 py-0.5 rounded mb-2 w-fit">Petit budget</span>
 							{/if}
 							<h4 class="font-medium text-[var(--color-charcoal)] text-sm mb-2 leading-tight">{h.nom}</h4>
-							<div class="space-y-1 text-xs text-[var(--color-charcoal)]/60">
+							<div class="space-y-1 text-xs text-[var(--color-charcoal)]/60 flex-1">
 								{#if h.capacite !== '-'}
 									<p>👥 {h.capacite}</p>
 								{/if}
 								<p>📍 {h.distance}</p>
 								<p class="text-[var(--color-sage-dark)]">📞 {h.contact}</p>
 							</div>
+							{#if h.lien}
+								<a 
+									href={h.lien} 
+									target="_blank" 
+									rel="noopener noreferrer"
+									class="mt-3 inline-flex items-center justify-center gap-1.5 text-xs font-medium text-white bg-[var(--color-sage-dark)] hover:bg-[var(--color-charcoal)] px-3 py-2 rounded-lg transition-colors"
+								>
+									<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+									Voir le site
+								</a>
+							{/if}
 						</div>
 					{/each}
 				</div>
@@ -442,6 +505,37 @@
 
 	<!-- CONTACT -->
 </main>
+
+<!-- Lightbox -->
+{#if lightboxImage}
+	<div 
+		class="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
+		onclick={closeLightbox}
+		onkeydown={(e) => e.key === 'Escape' && closeLightbox()}
+		role="dialog"
+		aria-modal="true"
+		tabindex="-1"
+	>
+		<button 
+			type="button"
+			class="absolute top-4 right-4 text-white/80 hover:text-white transition-colors p-2"
+			onclick={closeLightbox}
+			aria-label="Fermer"
+		>
+			<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+			</svg>
+		</button>
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<img 
+			src={lightboxImage} 
+			alt="Plan agrandi" 
+			class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+			onclick={(e) => e.stopPropagation()}
+		/>
+	</div>
+{/if}
 
 <!-- Footer -->
 <footer class="bg-[var(--color-charcoal)] text-white/40 py-6 px-4 text-center text-sm border-t border-white/10">
