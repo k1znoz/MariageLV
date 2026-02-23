@@ -2,7 +2,6 @@
 	// Navigation sections
 	const sections = [
 		{ id: 'accueil', label: 'Accueil' },
-		{ id: 'galerie', label: 'Galerie' },
 		{ id: 'notre-histoire', label: 'Notre Histoire' },
 		{ id: 'dates-lieux', label: 'Dates & Lieux' },
 		{ id: 'deroule', label: 'Déroulé' },
@@ -165,9 +164,9 @@
 	</section>
 
 	<!-- PHOTO À L'HONNEUR -->
-	<section id="galerie" class="py-20 px-4 bg-[var(--color-sage)]/5">
+	<section class="py-20 px-4 bg-[var(--color-sage)]/5">
 		<div class="max-w-4xl mx-auto">
-			<p class="section-subtitle">Notre histoire</p>
+
 
 			<div class="divider"></div>
 
