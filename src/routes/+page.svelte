@@ -215,11 +215,11 @@
 			<div class="divider"></div>
 
 			<div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-8 text-[var(--color-charcoal)]/80 text-justify leading-relaxed [column-rule:1px_solid_var(--color-sage)/20]">
-				<p class="mb-4">Il était une fois, un 30 juin 2024, un aventurier rentrant des terres charolaises. Entre deux courbatures, il fit défiler son téléphone… et posa un « like » sur le profil d'une demoiselle.</p>
+				<p class="mb-4">Il était une fois, un aventurier rentrant des terres de Vercingetorix. Entre deux courbatures, il prit son téléphone et fit une dernière tentative à la recherche de l'âme sœur… et posa un « like » sur le profil d'une demoiselle.</p>
 
-				<p class="mb-4">De son côté, lors d'un festin entre amies, elle découvrit un personnage aux mille visages : ensemble banane douteux, motard aventurier, héros de rooftop torse nu, noble en costume, troubadour en tee-shirt slogan. « Quel est donc cet étrange chevalier au sourire ensorcelant ? » songea-t-elle. Elle like.</p>
+				<p class="mb-4">De son côté, lors d'un festin entre amie, elle découvrit un personnage aux milles visages : portant un ensemble banane douteux sur une première illustration, puis vêtu tel un motard aventurier, ou encore héros de rooftop torse nu, noble en costume, et troubadour en tee-shirt slogan. « Quel est donc cet étrange chevalier au sourire ensorcelant ? » songea-t-elle. Elle lika.</p>
 
-				<p class="mb-4">Mais dans le royaume de Bumble, la dame écrit la première. Sachant qu'il revenait du Vietnam, contrée qu'elle allait explorer, elle lança : « Aurais-tu des conseils pour le Vietnam ? »</p>
+				<p class="mb-4">Mais dans le royaume de Bumble, la dame doit écrire la première. Sachant qu'il revenait du Vietnam, contrée qu'elle allait explorer, elle lança : « Aurais-tu des conseils pour un voyage au Vietnam ? »</p>
 
 				<p class="mb-4">À 16h06 précises, réponse immédiate. Itinéraires, montagnes, plages, deux-roues… Les messages pleuvaient. Était-ce un chevalier ou un agent de voyage ? Peu importe : au pire, le rendez-vous serait rentable.</p>
 
@@ -227,7 +227,7 @@
 
 				<p class="mb-4">Monsieur banane disparut. Apparut un héros à la veste d'aviateur et au sourire ravageur. Le temps suspendit son vol. Ils rirent, parlèrent, oublièrent même de manger, jusqu'à ce que le café les chasse.</p>
 
-				<p class="mb-4">De retour chez elle, elle murmura à ses amies : « C'est un désastre… » elle était… amoureuse.</p>
+				<p class="mb-4">De retour chez elle, elle murmura à ses amies : « les filles c'est un désastre… » elle était… amoureuse.</p>
 
 				<p class="mb-4">Puis arriva le message tant espéré : « Es-tu bien rentrée ? »</p>
 
