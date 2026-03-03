@@ -340,6 +340,12 @@
 								<p class="text-sm text-[var(--color-charcoal)]/60">Église Saint-Maurice, Gueugnon</p>
 							</div>
 						</div>
+						<div class="rounded-xl bg-[var(--color-sage)]/10 border border-[var(--color-sage)]/20 p-5">
+							<p class="font-medium text-[var(--color-charcoal)] mb-2">🏍️ Appel aux motards</p>
+							<p class="text-sm text-[var(--color-charcoal)]/75 leading-relaxed">Amis motards,</p>
+							<p class="text-sm text-[var(--color-charcoal)]/75 leading-relaxed">Nous vous invitons à enfourcher vos motos pour escorter les mariés et former une haie d’honneur pleine de bruit, de chrome et d’émotion.</p>
+							<p class="text-sm text-[var(--color-charcoal)]/75 leading-relaxed">Venez écrire avec nous ce moment unique… moteur allumé et cœur grand ouvert.</p>
+						</div>
 						<div class="flex gap-4">
 							<div class="w-16 text-[var(--color-sage-dark)] font-medium text-sm">16h00</div>
 							<div>
@@ -635,6 +641,9 @@
 			<div class="mt-10 bg-gradient-to-br from-[var(--color-sage)]/20 to-[var(--color-terracotta)]/10 rounded-2xl p-10">
 				<p class="text-[var(--color-charcoal)]/80 text-lg mb-8">
 					Pour nous aider à organiser au mieux cette journée, merci de remplir le questionnaire ci-dessous.
+				</p>
+				<p class="text-sm text-[var(--color-charcoal)]/60 italic mb-6">
+					Si vous venez en moto, pensez à le préciser dans le questionnaire 🏍️
 				</p>
 				<a 
 					href="https://docs.google.com/forms/d/e/1FAIpQLSewyccDsNKdWDfoCYeaBDZAnuDI57GG-U_aRBujMzAdl7Kf0A/viewform"
