@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
+
 	// Navigation sections
 	const sections = [
 		{ id: 'accueil', label: 'Accueil' },
@@ -64,6 +67,16 @@
 
 	let mobileMenuOpen = $state(false);
 	let lightboxImage = $state<string | null>(null);
+	let introOpen = $state(true);
+	let introClosing = $state(false);
+	let introStarted = $state(false);
+	let introUseVideo = $state<boolean | null>(null);
+	let introVideoFailed = $state(false);
+	let introVideoEl = $state<HTMLVideoElement | null>(null);
+	let introFallbackTimer: ReturnType<typeof setTimeout> | null = null;
+	let introEndTimer: ReturnType<typeof setTimeout> | null = null;
+	const introVideoSrc = '/ressources/vid/ouverture-lettre-scellee.mov';
+	const introPoster = photos[0];
 
 	function openLightbox(src: string) {
 		lightboxImage = src;
@@ -73,6 +86,79 @@
 		lightboxImage = null;
 	}
 
+	function finishIntro() {
+		if (introClosing) return;
+		introClosing = true;
+
+		if (introEndTimer) {
+			clearTimeout(introEndTimer);
+		}
+
+		introEndTimer = setTimeout(() => {
+			introOpen = false;
+		}, 620);
+	}
+
+	function handleIntroKeydown(e: KeyboardEvent) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			startIntro();
+		}
+	}
+
+	async function startIntro() {
+		if (introClosing) return;
+
+		if (introUseVideo === false || introVideoFailed) {
+			finishIntro();
+			return;
+		}
+
+		if (introUseVideo === null) return;
+
+		if (introStarted || !introVideoEl) return;
+		introStarted = true;
+
+		if (introFallbackTimer) {
+			clearTimeout(introFallbackTimer);
+		}
+
+		introFallbackTimer = setTimeout(() => {
+			introVideoFailed = true;
+			finishIntro();
+		}, 9000);
+
+		try {
+			await introVideoEl.play();
+		} catch {
+			introVideoFailed = true;
+			introStarted = false;
+		}
+	}
+
+	onMount(() => {
+		const probe = document.createElement('video');
+		const canPlayQuickTime = probe.canPlayType('video/quicktime') !== '';
+		const canPlayMp4 = probe.canPlayType('video/mp4') !== '';
+		introUseVideo = canPlayQuickTime || canPlayMp4;
+
+		return () => {
+			if (introFallbackTimer) clearTimeout(introFallbackTimer);
+			if (introEndTimer) clearTimeout(introEndTimer);
+			document.body.style.overflow = '';
+		};
+	});
+
+	$effect(() => {
+		if (introOpen && introUseVideo && !introVideoFailed && introVideoEl && !introStarted) {
+			startIntro();
+		}
+	});
+
+	$effect(() => {
+		document.body.style.overflow = introOpen ? 'hidden' : '';
+	});
+
 
 </script>
 
@@ -81,7 +167,70 @@
 	<meta name="description" content="Nous avons le plaisir de vous convier à notre mariage les 10 et 11 octobre 2026." />
 </svelte:head>
 
+{#if introOpen}
+	<div
+		class="intro-overlay fixed inset-0 z-[120] cursor-pointer overflow-hidden"
+		class:opacity-0={introClosing}
+		class:opacity-100={!introClosing}
+		onclick={() => {
+			if (introUseVideo && !introVideoFailed) {
+				finishIntro();
+				return;
+			}
+			if (introUseVideo === false || introVideoFailed) {
+				finishIntro();
+				return;
+			}
+		}}
+		onkeydown={handleIntroKeydown}
+		role="button"
+		tabindex="0"
+		aria-label="Ouvrir l'invitation"
+	>
+		{#if introUseVideo && !introVideoFailed}
+			<video
+				bind:this={introVideoEl}
+				src={introVideoSrc}
+				class="absolute inset-0 h-full w-full object-cover"
+				muted
+				playsinline
+				autoplay
+				preload="metadata"
+				onended={() => {
+					if (introFallbackTimer) clearTimeout(introFallbackTimer);
+					finishIntro();
+				}}
+				onerror={() => {
+					if (introFallbackTimer) clearTimeout(introFallbackTimer);
+					introVideoFailed = true;
+					introStarted = false;
+				}}
+			></video>
+		{:else if introUseVideo === false || introVideoFailed}
+			<img
+				src={introPoster}
+				alt="Laetitia et Valentin"
+				class="absolute inset-0 h-full w-full object-cover"
+			/>
+		{:else}
+			<div class="absolute inset-0 bg-black"></div>
+		{/if}
+
+		<div class="absolute inset-0 bg-black/45"></div>
+
+		<div class="absolute inset-0 flex items-center justify-center px-6 text-center">
+			<div class="max-w-md" in:fade={{ duration: 500 }}>
+				<div class="mb-6 h-10" aria-hidden="true"></div>
+				<p class="text-white/75 uppercase tracking-[0.35em] text-xs mb-5">Une invitation vous attend</p>
+				<h2 class="font-serif text-white text-4xl md:text-5xl mb-4">Laetitia & Valentin</h2>
+				<p class="text-white/80 text-sm">{introUseVideo && !introVideoFailed ? 'Touchez l’écran pour passer' : 'Touchez l’écran pour ouvrir'}</p>
+			</div>
+		</div>
+	</div>
+{/if}
+
 <!-- Navigation -->
+{#if !introOpen}
 <nav class="fixed top-0 left-0 right-0 z-50 bg-[var(--color-cream)]/95 backdrop-blur-sm border-b border-[var(--color-sage)]/20">
 	<div class="max-w-6xl mx-auto px-4">
 		<div class="flex items-center justify-between h-16">
@@ -89,7 +238,7 @@
 			
 			<!-- Desktop menu -->
 			<div class="hidden md:flex items-center gap-6">
-				{#each sections as section}
+				{#each sections as section (section.id)}
 					<a 
 						href="#{section.id}" 
 						class="text-sm text-[var(--color-charcoal)]/70 hover:text-[var(--color-sage-dark)] transition-colors"
@@ -118,7 +267,7 @@
 		<!-- Mobile menu -->
 		{#if mobileMenuOpen}
 			<div class="md:hidden py-4 border-t border-[var(--color-sage)]/20">
-				{#each sections as section}
+				{#each sections as section (section.id)}
 					<a 
 						href="#{section.id}" 
 						class="block py-2 text-sm text-[var(--color-charcoal)]/70 hover:text-[var(--color-sage-dark)]"
@@ -135,7 +284,7 @@
 <main>
 	<!-- HERO / ACCUEIL -->
 	<section id="accueil" class="min-h-screen flex items-center justify-center px-4 pt-16 bg-gradient-to-b from-[var(--color-cream)] to-[var(--color-sage)]/10">
-		<div class="text-center max-w-2xl mx-auto">
+		<div class="text-center max-w-2xl mx-auto" in:fly={{ y: 20, duration: 700 }}>
 			<p class="section-subtitle">Nous nous marions</p>
 			<h1 class="font-serif text-5xl md:text-7xl font-medium text-[var(--color-charcoal)] mb-4">
 				Laetitia <span class="text-[var(--color-gold)]">&</span> Valentin
@@ -450,7 +599,7 @@
 					À pied (idéalement situés)
 				</h3>
 				<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-					{#each hebergementsPied as h}
+					{#each hebergementsPied as h (h.nom)}
 						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow flex flex-col">
 							<h4 class="font-medium text-[var(--color-charcoal)] text-sm mb-2 leading-tight">{h.nom}</h4>
 							<div class="space-y-1 text-xs text-[var(--color-charcoal)]/60 flex-1">
@@ -466,17 +615,16 @@
 								{/if}
 							</div>
 							{#if h.lien}
-								<a 
-									href={h.lien} 
-									target="_blank" 
-									rel="noopener noreferrer"
+								<button
+									type="button"
+									onclick={() => window.open(h.lien, '_blank', 'noopener,noreferrer')}
 									class="mt-3 inline-flex items-center justify-center gap-1.5 text-xs font-medium text-white bg-[var(--color-sage-dark)] hover:bg-[var(--color-charcoal)] px-3 py-2 rounded-lg transition-colors"
 								>
 									<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
 									Voir le site
-								</a>
+								</button>
 							{/if}
 						</div>
 					{/each}
@@ -490,7 +638,7 @@
 					À moins de 10 minutes en voiture
 				</h3>
 				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-					{#each hebergementsMoins10 as h}
+					{#each hebergementsMoins10 as h (h.nom)}
 						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow flex flex-col">
 							{#if h.note}
 								<span class="inline-block text-xs bg-[var(--color-sage)]/20 text-[var(--color-sage-dark)] px-2 py-0.5 rounded mb-2 w-fit">{h.note}</span>
@@ -509,17 +657,16 @@
 								{/if}
 							</div>
 							{#if h.lien}
-								<a 
-									href={h.lien} 
-									target="_blank" 
-									rel="noopener noreferrer"
+								<button
+									type="button"
+									onclick={() => window.open(h.lien, '_blank', 'noopener,noreferrer')}
 									class="mt-3 inline-flex items-center justify-center gap-1.5 text-xs font-medium text-white bg-[var(--color-sage-dark)] hover:bg-[var(--color-charcoal)] px-3 py-2 rounded-lg transition-colors"
 								>
 									<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
 									Voir le site
-								</a>
+								</button>
 							{/if}
 						</div>
 					{/each}
@@ -533,7 +680,7 @@
 					À 10–20 minutes en voiture
 				</h3>
 				<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-					{#each hebergements10a20 as h}
+					{#each hebergements10a20 as h (h.nom)}
 						<div class="bg-white rounded-xl p-5 shadow-sm border border-[var(--color-sage)]/10 hover:shadow-md transition-shadow flex flex-col">
 							<h4 class="font-medium text-[var(--color-charcoal)] text-sm mb-2 leading-tight">{h.nom}</h4>
 							<div class="space-y-1 text-xs text-[var(--color-charcoal)]/60 flex-1">
@@ -546,17 +693,16 @@
 								{/if}
 							</div>
 							{#if h.lien}
-								<a 
-									href={h.lien} 
-									target="_blank" 
-									rel="noopener noreferrer"
+								<button
+									type="button"
+									onclick={() => window.open(h.lien, '_blank', 'noopener,noreferrer')}
 									class="mt-3 inline-flex items-center justify-center gap-1.5 text-xs font-medium text-white bg-[var(--color-sage-dark)] hover:bg-[var(--color-charcoal)] px-3 py-2 rounded-lg transition-colors"
 								>
 									<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
 									</svg>
 									Voir le site
-								</a>
+								</button>
 							{/if}
 						</div>
 					{/each}
@@ -704,3 +850,10 @@
 	<p>Laetitia & Valentin — 10 & 11 octobre 2026</p>
 	<p class="mt-1">Fait avec ❤️</p>
 </footer>
+{/if}
+
+<style>
+	.intro-overlay {
+		transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1);
+	}
+</style>
