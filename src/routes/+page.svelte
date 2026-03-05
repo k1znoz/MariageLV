@@ -163,7 +163,7 @@
 </script>
 
 <svelte:head>
-	<title>Laetitia & Valentin — Mariage</title>
+	<title>Laëtitia & Valentin — Mariage</title>
 	<meta name="description" content="Nous avons le plaisir de vous convier à notre mariage les 10 et 11 octobre 2026." />
 </svelte:head>
 
@@ -209,7 +209,7 @@
 		{:else if introUseVideo === false || introVideoFailed}
 			<img
 				src={introPoster}
-				alt="Laetitia et Valentin"
+				alt="Laëtitia et Valentin"
 				class="absolute inset-0 h-full w-full object-cover"
 			/>
 		{:else}
@@ -222,7 +222,7 @@
 			<div class="max-w-md" in:fade={{ duration: 500 }}>
 				<div class="mb-6 h-10" aria-hidden="true"></div>
 				<p class="text-white/75 uppercase tracking-[0.35em] text-xs mb-5">Une invitation vous attend</p>
-				<h2 class="font-serif text-white text-4xl md:text-5xl mb-4">Laetitia & Valentin</h2>
+				<h2 class="font-serif text-white text-4xl md:text-5xl mb-4">Laëtitia & Valentin</h2>
 				<p class="text-white/80 text-sm">{introUseVideo && !introVideoFailed ? 'Touchez l’écran pour passer' : 'Touchez l’écran pour ouvrir'}</p>
 			</div>
 		</div>
@@ -305,7 +305,7 @@
 					<div class="relative bg-white p-3 md:p-4 rounded-xl shadow-2xl group-hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.25)] transition-all duration-500">
 						<img 
 							src={photos[6]} 
-							alt="Laetitia & Valentin" 
+							alt="Laëtitia & Valentin" 
 							class="max-w-full max-h-[60vh] w-auto h-auto rounded-lg object-contain"
 						/>
 						
@@ -321,7 +321,7 @@
 
 			<!-- Citation -->
 			<p class="text-center mt-16 text-[var(--color-text-light)] italic font-light text-lg">
-				"Le début de notre belle aventure ensemble"
+				"Une âme sœur est quelqu’un qui a des serrures qui s’adaptent à nos clés, et des clés pour s’adapter à nos serrures."
 			</p>
 		</div>
 	</section>
@@ -332,7 +332,7 @@
 		<div class="text-center max-w-2xl mx-auto" in:fly={{ y: 20, duration: 700 }}>
 			<p class="section-subtitle">Le début de notre « pour toujours »</p>
 			<h1 class="font-serif text-5xl md:text-7xl font-medium text-[var(--color-charcoal)] mb-4">
-				Laetitia <span class="text-[var(--color-gold)]">&</span> Valentin
+				Laëtitia <span class="text-[var(--color-gold)]">&</span> Valentin
 			</h1>
 			<div class="divider"></div>
 			<p class="text-lg md:text-xl text-[var(--color-charcoal)]/80 mb-2">
@@ -843,7 +843,7 @@
 
 <!-- Footer -->
 <footer class="bg-[var(--color-charcoal)] text-white/40 py-6 px-4 text-center text-sm border-t border-white/10">
-	<p>Laetitia & Valentin — 10 & 11 octobre 2026</p>
+	<p>Laëtitia & Valentin — 10 & 11 octobre 2026</p>
 	<p class="mt-1">Fait avec ❤️</p>
 </footer>
 {/if}
