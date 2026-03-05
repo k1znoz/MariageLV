@@ -1,12 +1,12 @@
 @import 'tailwindcss';
 
 :root {
-	--color-cream: #FAF8F5;
-	--color-sage: #9CAF88;
-	--color-sage-dark: #7A8F6A;
-	--color-terracotta: #C4A484;
+	--color-cream: #F8F3EC;
+	--color-sage: #A67C52;
+	--color-sage-dark: #6E2C3A;
+	--color-terracotta: #8C5A3C;
 	--color-charcoal: #3D3D3D;
-	--color-gold: #D4AF37;
+	--color-gold: #C9A227;
 	--font-serif: 'Cormorant Garamond', Georgia, serif;
 	--font-sans: 'Montserrat', system-ui, sans-serif;
 }

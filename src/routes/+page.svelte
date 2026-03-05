@@ -282,37 +282,8 @@
 </nav>
 
 <main>
-	<!-- HERO / ACCUEIL -->
-	<section id="accueil" class="min-h-screen flex items-center justify-center px-4 pt-16 bg-gradient-to-b from-[var(--color-cream)] to-[var(--color-sage)]/10">
-		<div class="text-center max-w-2xl mx-auto" in:fly={{ y: 20, duration: 700 }}>
-			<p class="section-subtitle">Nous nous marions</p>
-			<h1 class="font-serif text-5xl md:text-7xl font-medium text-[var(--color-charcoal)] mb-4">
-				Laetitia <span class="text-[var(--color-gold)]">&</span> Valentin
-			</h1>
-			<div class="divider"></div>
-			<p class="text-lg md:text-xl text-[var(--color-charcoal)]/80 mb-2">
-				10 & 11 octobre 2026
-			</p>
-			<p class="text-base text-[var(--color-charcoal)]/60 mb-8">
-				Gueugnon & Anzy-le-Duc, Bourgogne
-			</p>
-			<p class="text-base md:text-lg text-[var(--color-charcoal)]/70 leading-relaxed max-w-lg mx-auto mb-10">
-				C'est avec une immense joie que nous vous invitons à partager ce moment unique avec nous. 
-				Votre présence sera notre plus beau cadeau.
-			</p>
-			<a 
-				href="#dates-lieux" 
-				class="inline-flex items-center gap-2 text-[var(--color-sage-dark)] hover:text-[var(--color-charcoal)] transition-colors"
-			>
-				<span class="text-sm uppercase tracking-widest">Découvrir</span>
-				<svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-				</svg>
-			</a>
-		</div>
-	</section>
 
-	<!-- PHOTO À L'HONNEUR -->
+		<!-- PHOTO À L'HONNEUR -->
 	<section class="py-20 px-4 bg-[var(--color-sage)]/5">
 		<div class="max-w-4xl mx-auto">
 
@@ -355,6 +326,38 @@
 		</div>
 	</section>
 
+
+	<!-- HERO / ACCUEIL -->
+	<section id="accueil" class="min-h-screen flex items-center justify-center px-4 pt-16 bg-gradient-to-b from-[var(--color-cream)] to-[var(--color-sage)]/10">
+		<div class="text-center max-w-2xl mx-auto" in:fly={{ y: 20, duration: 700 }}>
+			<p class="section-subtitle">Le début de notre « pour toujours »</p>
+			<h1 class="font-serif text-5xl md:text-7xl font-medium text-[var(--color-charcoal)] mb-4">
+				Laetitia <span class="text-[var(--color-gold)]">&</span> Valentin
+			</h1>
+			<div class="divider"></div>
+			<p class="text-lg md:text-xl text-[var(--color-charcoal)]/80 mb-2">
+				10 & 11 octobre 2026
+			</p>
+			<p class="text-base text-[var(--color-charcoal)]/60 mb-8">
+				Gueugnon & Anzy-le-Duc, Bourgogne
+			</p>
+			<p class="text-base md:text-lg text-[var(--color-charcoal)]/70 leading-relaxed max-w-lg mx-auto mb-10">
+				C'est avec une immense joie que nous vous invitons à partager ce moment unique avec nous. 
+				Votre présence sera notre plus beau cadeau.
+			</p>
+			<a 
+				href="#dates-lieux" 
+				class="inline-flex items-center gap-2 text-[var(--color-sage-dark)] hover:text-[var(--color-charcoal)] transition-colors"
+			>
+				<span class="text-sm uppercase tracking-widest">Découvrir</span>
+				<svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+				</svg>
+			</a>
+		</div>
+	</section>
+
+
 	
 	<!-- NOTRE HISTOIRE -->
 	<section id="notre-histoire" class="py-20 px-4 bg-white">
@@ -364,25 +367,15 @@
 			<div class="divider"></div>
 
 			<div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-8 text-[var(--color-charcoal)]/80 text-justify leading-relaxed [column-rule:1px_solid_var(--color-sage)/20]">
-				<p class="mb-4">Il était une fois, un aventurier rentrant des terres de Vercingetorix. Entre deux courbatures, il prit son téléphone et fit une dernière tentative à la recherche de l'âme sœur… et posa un « like » sur le profil d'une demoiselle.</p>
+				<p class="mb-4">« Il était une fois un aventurier rentrant des terres de Vercingetorix tomba sur l’illustration d’une demoiselle dans les méandres d’internet.</p>
 
-				<p class="mb-4">De son côté, lors d'un festin entre amie, elle découvrit un personnage aux milles visages : portant un ensemble banane douteux sur une première illustration, puis vêtu tel un motard aventurier, ou encore héros de rooftop torse nu, noble en costume, et troubadour en tee-shirt slogan. « Quel est donc cet étrange chevalier au sourire ensorcelant ? » songea-t-elle. Elle lika.</p>
+				<p class="mb-4">Elle découvrit alors un étrange chevalier aux mille visages : motard, pêcheur, gamer, aventurier, businessman, héros de rooftop… et même mannequin pour un ensemble banane douteux. Intriguée, elle répondit en demandant des conseils pour son futur périple au Vietnam.</p>
 
-				<p class="mb-4">Mais dans le royaume de Bumble, la dame doit écrire la première. Sachant qu'il revenait du Vietnam, contrée qu'elle allait explorer, elle lança : « Aurais-tu des conseils pour un voyage au Vietnam ? »</p>
+				<p class="mb-4">Réponse immédiate. Itinéraires, montagnes, plages, deux-roues… Les messages pleuvaient. Était-ce un chevalier ou un agent de voyage ?</p>
 
-				<p class="mb-4">À 16h06 précises, réponse immédiate. Itinéraires, montagnes, plages, deux-roues… Les messages pleuvaient. Était-ce un chevalier ou un agent de voyage ? Peu importe : au pire, le rendez-vous serait rentable.</p>
+				<p class="mb-4">Trois jours plus tard, à la Taverne Bohème, il attendait, ponctuel. Elle arriva — légèrement en retard, comme toute héroïne qui se respecte. Il se retourna. L’envoûta de son regard et la flèche invisible frappa. Monsieur banane disparut. Apparut un héros à la veste d'aviateur et au sourire ravageur. Le temps suspendit son vol et la taverne les chassa.</p>
 
-				<p class="mb-4">Trois jours plus tard, au Café Bohème, il attendait, ponctuel. Elle arriva — légèrement en retard, comme toute héroïne qui se respecte. Il se retourna. Et la flèche invisible frappa.</p>
-
-				<p class="mb-4">Monsieur banane disparut. Apparut un héros à la veste d'aviateur et au sourire ravageur. Le temps suspendit son vol. Ils rirent, parlèrent, oublièrent même de manger, jusqu'à ce que le café les chasse.</p>
-
-				<p class="mb-4">De retour chez elle, elle murmura à ses amies : « les filles c'est un désastre… » elle était… amoureuse.</p>
-
-				<p class="mb-4">Puis arriva le message tant espéré : « Es-tu bien rentrée ? »</p>
-
-				<p class="mb-4">Ils se revirent. Et depuis ce jour, ils ne se quittèrent plus.</p>
-
-				<p class="mb-4">Comme quoi, même dans les contes modernes, tout peut commencer par… <strong class="text-[var(--color-sage-dark)]">un ensemble banane.</strong></p>
+				<p class="mb-4">Depuis ce jour, ils ne se quittèrent plus. Comme quoi, même dans les contes modernes, les plus belles histoires peuvent commencer par… un ensemble banane. »</p>
 			</div>
 		</div>
 	</section>
@@ -473,6 +466,9 @@
 			<p class="section-subtitle">Le programme</p>
 			<h2 class="section-title">Déroulé du week-end</h2>
 			<div class="divider"></div>
+			<p class="text-center text-[var(--color-charcoal)]/70 text-sm md:text-base">
+				Les horaires précis vous seront communiqués avec le faire-part.
+			</p>
 
 			<div class="mt-12 space-y-8">
 				<!-- Samedi -->
@@ -483,7 +479,7 @@
 					</h3>
 					<div class="space-y-4">
 						<div class="flex gap-4">
-							<div class="w-16 text-[var(--color-sage-dark)] font-medium text-sm">14h30</div>
+							<div class="w-32 text-[var(--color-sage-dark)] font-medium text-sm">Début d’après-midi</div>
 							<div>
 								<p class="font-medium text-[var(--color-charcoal)]">Cérémonie religieuse</p>
 								<p class="text-sm text-[var(--color-charcoal)]/60">Église Saint-Maurice, Gueugnon</p>
@@ -496,21 +492,21 @@
 							<p class="text-sm text-[var(--color-charcoal)]/75 leading-relaxed">Venez écrire avec nous ce moment unique… moteur allumé et cœur grand ouvert.</p>
 						</div>
 						<div class="flex gap-4">
-							<div class="w-16 text-[var(--color-sage-dark)] font-medium text-sm">16h00</div>
+							<div class="w-32 text-[var(--color-sage-dark)] font-medium text-sm">Après la cérémonie</div>
 							<div>
 								<p class="font-medium text-[var(--color-charcoal)]">Trajet vers la réception</p>
 								<p class="text-sm text-[var(--color-charcoal)]/60">Environ 40 minutes</p>
 							</div>
 						</div>
 						<div class="flex gap-4">
-							<div class="w-16 text-[var(--color-sage-dark)] font-medium text-sm">17h00</div>
+							<div class="w-32 text-[var(--color-sage-dark)] font-medium text-sm">Fin d’après-midi</div>
 							<div>
 								<p class="font-medium text-[var(--color-charcoal)]">Vin d'honneur</p>
 								<p class="text-sm text-[var(--color-charcoal)]/60">Les Salles du Prieuré, Anzy-le-Duc</p>
 							</div>
 						</div>
 						<div class="flex gap-4">
-							<div class="w-16 text-[var(--color-sage-dark)] font-medium text-sm">20h00</div>
+							<div class="w-32 text-[var(--color-sage-dark)] font-medium text-sm">Soirée</div>
 							<div>
 								<p class="font-medium text-[var(--color-charcoal)]">Dîner & Soirée dansante</p>
 								<p class="text-sm text-[var(--color-charcoal)]/60">Jusqu'au bout de la nuit ✨</p>
@@ -527,7 +523,7 @@
 					</h3>
 					<div class="space-y-4">
 						<div class="flex gap-4">
-							<div class="w-16 text-[var(--color-sage-dark)] font-medium text-sm">11h00</div>
+							<div class="w-32 text-[var(--color-sage-dark)] font-medium text-sm">Fin de matinée</div>
 							<div>
 								<p class="font-medium text-[var(--color-charcoal)]">Brunch convivial</p>
 								<p class="text-sm text-[var(--color-charcoal)]/60">Pour prolonger le bonheur ensemble</p>
