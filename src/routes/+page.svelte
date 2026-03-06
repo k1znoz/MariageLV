@@ -367,7 +367,7 @@
 			<div class="divider"></div>
 
 			<div class="mt-12 columns-1 md:columns-2 lg:columns-3 gap-8 text-[var(--color-charcoal)]/80 text-justify leading-relaxed [column-rule:1px_solid_var(--color-sage)/20]">
-				<p class="mb-4">« Il était une fois un aventurier rentrant des terres de Vercingetorix tomba sur l’illustration d’une demoiselle dans les méandres d’internet.</p>
+				<p class="mb-4">« Il était une fois un aventurier qui, rentrant des terres de Vercingetorix, tomba sur l’illustration d’une demoiselle dans les méandres d’internet.</p>
 
 				<p class="mb-4">Elle découvrit alors un étrange chevalier aux mille visages : motard, pêcheur, gamer, aventurier, businessman, héros de rooftop… et même mannequin pour un ensemble banane douteux. Intriguée, elle répondit en demandant des conseils pour son futur périple au Vietnam.</p>
 
@@ -421,6 +421,18 @@
 						</button>
 						<p class="text-xs text-[var(--color-charcoal)]/50 mt-2 text-center">Cliquez pour agrandir</p>
 					</div>
+					<div class="mt-6">
+						<p class="text-sm font-medium text-[var(--color-charcoal)] mb-2">📍 Carte Google Maps</p>
+						<iframe
+							title="Carte de l'Eglise Saint-Maurice"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2741.3571730931717!2d4.0570457131180335!3d46.59994397099479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f3d0a98b272b91%3A0xc25066bf8b083a21!2s%C3%89glise%20Saint-Maurice!5e0!3m2!1sfr!2sfr!4v1772783787201!5m2!1sfr!2sfr"
+							class="w-full h-64 rounded-xl border border-[var(--color-sage)]/20"
+							style="border:0;"
+							allowfullscreen
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						></iframe>
+					</div>
 				</div>
 
 				<!-- Réception -->
@@ -454,6 +466,18 @@
 							/>
 						</button>
 						<p class="text-xs text-[var(--color-charcoal)]/50 mt-2 text-center">Cliquez pour agrandir</p>
+					</div>
+					<div class="mt-6">
+						<p class="text-sm font-medium text-[var(--color-charcoal)] mb-2">📍 Carte Google Maps</p>
+						<iframe
+							title="Carte des Salles du Prieure"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7571.534300944893!2d4.052186987027714!3d46.322107826715964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f3e5927ba7aa7b%3A0xb42d01408cbe157e!2sLes%20Salles%20du%20Prieur%C3%A9!5e0!3m2!1sfr!2sfr!4v1772783838122!5m2!1sfr!2sfr"
+							class="w-full h-64 rounded-xl border border-[var(--color-sage)]/20"
+							style="border:0;"
+							allowfullscreen
+							loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade"
+						></iframe>
 					</div>
 				</div>
 			</div>
