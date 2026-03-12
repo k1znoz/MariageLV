@@ -864,6 +864,38 @@
 		/>
 	</div>
 {/if}
+	<section id="contact" class="py-20 px-4 bg-[var(--color-charcoal)] text-white">
+		<div class="max-w-2xl mx-auto text-center">
+			<p class="text-[var(--color-gold)] text-sm uppercase tracking-widest mb-2">Une question ?</p>
+			<h2 class="font-serif text-4xl text-white mb-4">Contactez-nous</h2>
+			<div class="w-12 h-px bg-[var(--color-gold)] mx-auto mb-10"></div>
+
+			<div class="grid sm:grid-cols-2 gap-6">
+				<div class="bg-white/5 rounded-2xl p-6 backdrop-blur-sm">
+					<p class="text-[var(--color-gold)] font-serif text-lg mb-3">Laetitia</p>
+					<a href="tel:0688127534" class="block text-white/80 hover:text-white mb-2">
+						📞 06 88 12 75 34
+					</a>
+					<a href="mailto:laetitiabauwens@live.fr" class="block text-white/80 hover:text-white text-sm break-all">
+						✉️ laetitiabauwens@live.fr
+					</a>
+				</div>
+				<div class="bg-white/5 rounded-2xl p-6 backdrop-blur-sm">
+					<p class="text-[var(--color-gold)] font-serif text-lg mb-3">Valentin</p>
+					<a href="tel:0689025434" class="block text-white/80 hover:text-white mb-2">
+						📞 06 89 02 54 34
+					</a>
+					<a href="mailto:valentin.sautet@gmail.com" class="block text-white/80 hover:text-white text-sm break-all">
+						✉️ valentin.sautet@gmail.com
+					</a>
+				</div>
+			</div>
+
+			<p class="mt-12 text-white/60 text-sm">
+				Nous avons hâte de partager ce moment avec vous.
+			</p>
+		</div>
+	</section>
 
 <!-- Footer -->
 <footer class="bg-[var(--color-charcoal)] text-white/40 py-6 px-4 text-center text-sm border-t border-white/10">
