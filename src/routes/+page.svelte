@@ -65,6 +65,63 @@
 		'/ressources/Pic/WhatsApp%20Image%202026-01-30%20at%2009.30.37.jpeg'
 	];
 
+	const dresscodePalette = [
+		{
+			title: 'Tons prunes & vins',
+			colors: [
+				{ name: 'Prune', hex: '#5E2A66' },
+				{ name: 'Aubergine', hex: '#4B1F4E' },
+				{ name: 'Bordeaux', hex: '#6C2336' },
+				{ name: 'Lie de vin', hex: '#5B2438' }
+			]
+		},
+		{
+			title: 'Tons chauds & terreux',
+			colors: [
+				{ name: 'Chocolat', hex: '#5A3424' },
+				{ name: 'Terracotta', hex: '#B2512A' },
+				{ name: 'Cannelle', hex: '#A55022' },
+				{ name: 'Caramel', hex: '#C58A45' }
+			]
+		},
+		{
+			title: 'Tons roses & boisés',
+			colors: [
+				{ name: 'Vieux rose', hex: '#C98C8D' },
+				{ name: 'Rose poudré', hex: '#D49A9A' },
+				{ name: 'Bois de rose', hex: '#A56875' },
+				{ name: 'Mauve', hex: '#A97895' }
+			]
+		},
+		{
+			title: 'Tons verts',
+			colors: [
+				{ name: 'Sauge', hex: '#8AA891' },
+				{ name: 'Olive', hex: '#7A8E57' },
+				{ name: 'Kaki', hex: '#5E7348' },
+				{ name: 'Forêt', hex: '#2E5D43' }
+			]
+		}
+	];
+
+	const forbiddenMainColors = [
+		{ name: 'Noir', hex: '#050505' },
+		{ name: 'Rouge', hex: '#C80C1E' },
+		{ name: 'Blanc', hex: '#F5F6F7' },
+		{ name: 'Crème', hex: '#E8E2D8' }
+	];
+
+	const forbiddenLightColors = [
+		{ name: 'Ivoire', hex: '#F2EFE7' },
+		{ name: 'Beige clair', hex: '#E7DCCB' },
+		{ name: 'Grège', hex: '#D9D2C6' },
+		{ name: 'Taupe clair', hex: '#D7D2CD' },
+		{ name: 'Rose poudré', hex: '#E9D7D9' },
+		{ name: 'Bleu ciel', hex: '#D2DCE6' },
+		{ name: 'Vert d\'eau', hex: '#CED8CC' },
+		{ name: 'Lilas clair', hex: '#D8D3E1' }
+	];
+
 	let mobileMenuOpen = $state(false);
 	let lightboxImage = $state<string | null>(null);
 	let introOpen = $state(true);
@@ -738,17 +795,72 @@
 			<h2 class="section-title">Dress Code</h2>
 			<div class="divider"></div>
 
-			<div class="mt-10 bg-white rounded-2xl p-10 shadow-sm border border-[var(--color-sage)]/10">
-				<div class="w-16 h-16 bg-[var(--color-gold)]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-					<span class="text-3xl">👗</span>
+			<div class="mt-10 bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-[var(--color-sage)]/10">
+				<p class="text-[var(--color-charcoal)]/80 text-base sm:text-lg leading-relaxed mb-8">
+					Voici la <strong class="text-[var(--color-charcoal)]">palette de couleur</strong> pour vous guider dans le choix de votre tenue.
+				</p>
+
+				<div class="space-y-8 text-left">
+					{#each dresscodePalette as group (group.title)}
+						<div>
+							<h3 class="text-xs sm:text-sm uppercase tracking-[0.2em] text-[var(--color-charcoal)]/70 mb-4 text-center">
+								{group.title}
+							</h3>
+							<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
+								{#each group.colors as shade (shade.name)}
+									<div class="text-center">
+										<div
+											class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto border border-black/5 shadow-sm"
+											style={`background-color: ${shade.hex};`}
+										></div>
+										<p class="mt-2 text-sm text-[var(--color-charcoal)]/80">{shade.name}</p>
+									</div>
+								{/each}
+							</div>
+						</div>
+					{/each}
 				</div>
-				<p class="text-[var(--color-charcoal)]/80 text-lg leading-relaxed">
-					Une <strong class="text-[var(--color-charcoal)]">palette de couleur</strong> vous sera communiquée 
-					avec le faire-part afin de vous guider dans le choix de votre tenue.
-				</p>
-				<p class="mt-4 text-sm text-[var(--color-charcoal)]/60">
-					Restez à l'écoute ! ✨
-				</p>
+
+				<div class="mt-10 p-6 sm:p-8 rounded-xl bg-[var(--color-terracotta)]/10 border border-[var(--color-terracotta)]/20 text-center">
+					<h3 class="text-lg sm:text-xl uppercase tracking-[0.2em] text-[var(--color-charcoal)] mb-1">
+						Couleurs interdites
+					</h3>
+					<p class="text-xs sm:text-sm uppercase tracking-[0.25em] text-[var(--color-charcoal)]/60 mb-6">
+						Dress code mariage
+					</p>
+
+					<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 mb-6">
+						{#each forbiddenMainColors as shade (shade.name)}
+							<div class="text-center">
+								<div
+									class="w-16 h-16 sm:w-20 sm:h-20 rounded-full mx-auto border border-black/10 shadow-sm"
+									style={`background-color: ${shade.hex};`}
+								></div>
+								<p class="mt-2 text-sm text-[var(--color-charcoal)]/85">{shade.name}</p>
+							</div>
+						{/each}
+					</div>
+
+					<p class="text-xs sm:text-sm uppercase tracking-[0.15em] text-[var(--color-charcoal)]/70 mb-5">
+						Toutes les couleurs très claires / pâles / neutres
+					</p>
+
+					<div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 sm:gap-5 mb-5">
+						{#each forbiddenLightColors as shade (shade.name)}
+							<div class="text-center">
+								<div
+									class="w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto border border-black/5 shadow-sm"
+									style={`background-color: ${shade.hex};`}
+								></div>
+								<p class="mt-2 text-xs sm:text-sm text-[var(--color-charcoal)]/80">{shade.name}</p>
+							</div>
+						{/each}
+					</div>
+
+					<p class="text-sm text-[var(--color-charcoal)]/80 leading-relaxed text-left sm:text-center">
+						Et Couleurs interdites : Noir, rouge, blanc, crème, toutes les couleurs très claires / pâles / neutres.
+					</p>
+				</div>
 			</div>
 		</div>
 	</section>
