@@ -857,9 +857,6 @@
 						{/each}
 					</div>
 
-					<p class="text-sm text-[var(--color-charcoal)]/80 leading-relaxed text-left sm:text-center">
-						Et Couleurs interdites : Noir, rouge, blanc, crème, toutes les couleurs très claires / pâles / neutres.
-					</p>
 				</div>
 			</div>
 		</div>
